@@ -1,2 +1,2 @@
-# angular
-Proyecto de angular
+# MEAN
+Proyecto de MEAN
