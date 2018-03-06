@@ -1,0 +1,56 @@
+
+<div class="artist-box" *ngIf = "artist">
+    <div id="artist-head-card">
+        <div class="image">
+            <img src="{{url + 'get-image-artist/' + artist.image}}" alt="" *ngIf="artist.image && artist.image !== 'null'">
+        </div>
+        <div class="data">
+            
+            <h1>{{artist.name}}</h1>
+            <p class="description">
+                {{artist.description}}
+            </p>
+            <a href="" [routerLink] = "['/crear-album/',artist._id]" *ngIf="identity.role == 'ROLE_ADMIN'" class="btn btn-default">
+                Agregar album
+            </a>
+        </div>
+    </div>
+    
+    <div class="clearfix"></div>
+
+    <div id="gallery-albums" *ngIf = "albums" >
+        <!--Mostrar albums-->
+        <ul class="albums-list">
+            <li *ngFor = "let album of albums" class=" col-lg-4 album-item">
+                
+                    <div class="album-image">
+                        <img src="{{url + '/get-image-album/' + album.image}}" alt="">
+                    </div>
+                
+                    <div class="album-name">
+                        <p>
+                            <a href="#">
+                                {{album.title}}
+                            </a>
+                        </p>
+                        <p>
+                            <a [routerLink] = "['/artist',album.artist._id]">
+                                {{album.artist.name}}
+                            </a>
+                        </p>
+
+                        <div class="buttons" *ngIf = "identity.role == 'ROLE_ADMIN'">
+                            <a [routerLink] = "['/editar-album/',album._id]" class="btn btn-sm btn-warning">Editar</a>
+                            <a (click) = "onDeleteAlbumConfirm(album._id)" class="btn btn-sm btn-danger">Eliminar</a>
+                        </div>
+                        <div class="seguro" *ngIf = "confirm == album._id">
+                            <a (click) = "deleteAlbum(artist._id)" class="btn btn-sm btn-danger">Eliminar</a>
+                            <a (click) = "cancelDelete()" class="btn btn-sm btn-primary">Cancelar</a>
+                        </div>
+
+                    </div>
+                
+            </li>
+        </ul>
+    </div>
+</div>

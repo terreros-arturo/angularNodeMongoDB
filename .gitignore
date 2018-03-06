@@ -1,0 +1,6 @@
+#Ignorar lo siguiente
+#api/uploads/users/lIg0SCKiINBn08doV4RILj4z.jpg
+
+/api/uploads/*/*
+/api/node_modules/
+/vista/node_modules/

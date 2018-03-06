@@ -1,0 +1,43 @@
+<div class="col-lg-4">
+    <h1>{{titulo}}</h1>
+    <div>
+        <div class="{{alertClass}}" *ngIf = "albumMessage">
+            {{albumMessage}}
+        </div>
+    </div>
+    <div class=""></div>
+    <form #addAlbumForm = "ngForm" (ngSubmit) = "onSubmit()">
+        <p>
+            <label for="">T&iacute;tulo</label>
+            <input class="form-control" type="text" name="title" id="title" placeholder="Ingresa el t&iacute;tulo" #title = "ngModel" [(ngModel)] = "album.title" required>
+            <span *ngIf="title.invalid && title.touched">
+                * Campo requerido
+            </span>
+        </p>
+        <p>
+            <label for="">Descripci&oacute;n</label>
+            <textarea class="form-control" type="text" name="description" id="description" placeholder="Ingresa la descripci&oacute;n" #description = "ngModel" [(ngModel)] = "album.description" required>
+            </textarea>
+            <span *ngIf="description.invalid && description.touched">
+                * Campo requerido
+            </span>
+        </p>
+
+        <p>
+            <label for="">A&ntilde;o</label>
+            <input class="form-control" type="number" min="1900" max = "9999" minlength="4" maxlength="4" name="year" id="year" placeholder="Ingresa el A&ntilde;o" #year = "ngModel" [(ngModel)] = "album.year" required >
+            <span *ngIf="year.invalid && year.touched">
+                * Campo requerido
+            </span>
+        </p>
+
+        <div class = "album_image_for_edit" *ngIf="album.image && album.image !== 'null'">
+            <img [src]="url + 'get-image-album/' + album.image">
+        </div>
+        <p *ngIf="album && album._id">
+            <label for="">Imagen</label>
+            <input class="form-control" type="file" name="image" id="image" placeholder="Selecciona una imagen" (change) = "fileChooseEvent($event)">
+        </p>
+        <input class ="btn btn-success" type="submit" value="{{btnSubmit}}" [disabled] = "addAlbumForm.form.invalid" >
+    </form>
+</div>

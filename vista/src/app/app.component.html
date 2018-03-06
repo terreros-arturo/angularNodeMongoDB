@@ -1,0 +1,113 @@
+<!doctype html>
+<div *ngIf="identity" class="navigation col-lg-1">
+  <h1 class="head-title">
+    <a [routerLink] = "['/']">
+      <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
+      {{title}}
+    </a>
+  </h1>
+  <nav id="navigation">
+      <a href="#">
+        <span class="glyphicon glyphicon-search" aria-hidden="true"  [routerLinkActive] = "['actived']"></span>
+        Buscar
+      </a>
+      <a [routerLink] = "['/artistas/1']" href="#" [routerLinkActive] = "['actived']">
+        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+        Artistas
+      </a>
+      <a href="#">
+        <span class="glyphicon glyphicon-book" aria-hidden="true"  [routerLinkActive] = "['actived']"></span>
+        Albums
+      </a>
+  </nav>
+  <nav id="user_logged">
+    <div class = "user-image">
+        <img id="user-image" src="{{url + 'get-image-user/' + identity.image}}">
+    </div>
+    <span id="identity_name">
+      {{identity.name}}
+    </span>
+    <a [routerLink] ="['/mis-datos']" href="#" [routerLinkActive] = "['actived']">
+      <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+      Mis datos
+    </a>
+    <a (click)= 'logout()' href="#" class="btn-logout">
+      <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+      Salir
+    </a>
+    
+  </nav>
+</div>
+
+<div [class.hidden]= "!identity" class="central col-lg-11">
+  <router-outlet></router-outlet>
+</div>
+
+<div class="col-lg-11" *ngIf="!identity">
+  <div class="col-lg-6">
+    <h1>Identifícate</h1>
+    <div *ngIf="errorMessage">
+      <div class="alert alert-info">
+        <strong>Error en la autenticación:</strong> {{errorMessage}}
+      </div>
+    </div>
+    <form #loginForm = "ngForm" class = "col-md-5 " (ngSubmit)="onSubmit()">
+      <p>
+        <label>Correo electrónico:</label>
+        <input type="email" name = "email" #email = "ngModel" [(ngModel)] = "user.email" class="form-control" required />
+        <span *ngIf = "email.invalid && (email.touched)">
+          * Campo obligatorio
+        </span>
+      </p>
+      <p>
+        <label>Contraseña:</label>
+        <input type="password" name="password" #password = "ngModel" [(ngModel)] = "user.password" class="form-control" required />
+        <span *ngIf = "!(password.valid) && password.touched">
+          * Campo obligatorio
+        </span>
+      </p>
+      <input type="submit" value="Entrar" class="btn btn-primary" [disabled] = "loginForm.form.invalid">
+    </form>
+  </div>
+  
+  <div class="col-lg-6">
+    <h1>Regístrate</h1>
+    <div *ngIf="mensajeRegistro">
+      <div class="alert alert-info">
+        <strong>{{mensajeRegistro}}</strong>
+      </div>
+    </div>
+    <form class="col-md-10" #registerForm= "ngForm" (ngSubmit) = "registerSubmit()">
+      <p>
+        <label>Nombre</label>
+        <input #name = "ngModel" name = "name" [(ngModel)] = "registroUsuario.name" type="text" class="form-control" required />
+        <span *ngIf = "!name.valid && name.touched">
+          * Campo obligatorio
+        </span>
+      </p>
+      <p>
+        <label>Apellidos</label>
+        <input #apellidos ="ngModel" name = "apellidos" [(ngModel)] = "registroUsuario.surname" type="text" class="form-control" required>
+        <span *ngIf="!apellidos.valid && apellidos.touched">
+          * Campo obligatorio
+        </span>
+      </p>
+
+      <p>
+        <label>Correo electrónico</label>
+        <input #emailRegistro = "ngModel" name = "emailRegistro" [(ngModel)] = "registroUsuario.email" type="email" class="form-control" required>
+        <span *ngIf="!emailRegistro.valid && emailRegistro.touched">
+          * Campo obligatorio
+        </span>
+      </p>
+      <p>
+        <label>Contraseña</label>
+        <input #passwordRegistro = "ngModel" name = "passwordRegistro" [(ngModel)] = "registroUsuario.password" type="password" class="form-control" required>
+        <span *ngIf = "passwordRegistro.invalid && passwordRegistro.touched">
+          * Campo requerido
+        </span>
+      </p>
+      <input type="submit" class="btn btn-primary" value="Registrarse" [disabled] = "registerForm.form.invalid">
+    </form>
+  </div>
+</div>

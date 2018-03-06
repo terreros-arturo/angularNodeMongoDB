@@ -1,0 +1,494 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Access-C",
+				"Access-Control-Allow-Origin"
+			],
+			[
+				"song",
+				"songDeleted"
+			],
+			[
+				"se",
+				"send"
+			],
+			[
+				"res",
+				"response"
+			],
+			[
+				"canc",
+				"canción"
+			],
+			[
+				"req",
+				"request"
+			],
+			[
+				"son",
+				"songs"
+			],
+			[
+				"id",
+				"idsong"
+			],
+			[
+				"al",
+				"album"
+			],
+			[
+				"fin",
+				"findByIdAndUpdate"
+			],
+			[
+				"alb",
+				"albumUpdate"
+			],
+			[
+				"t",
+				"total"
+			],
+			[
+				"getAl",
+				"getAlbums"
+			],
+			[
+				"pag",
+				"pagina"
+			],
+			[
+				"par",
+				"params"
+			],
+			[
+				"arti",
+				"artistRemoved"
+			],
+			[
+				"act",
+				"actualizado"
+			],
+			[
+				"art",
+				"artistaUpdated"
+			],
+			[
+				"find",
+				"findById"
+			],
+			[
+				"artis",
+				"artists"
+			],
+			[
+				"para",
+				"parametros"
+			],
+			[
+				"get",
+				"getArtist"
+			],
+			[
+				"use",
+				"userStored"
+			],
+			[
+				"usr",
+				"userStored"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"U",
+				"UserSchema"
+			],
+			[
+				"bo",
+				"bodyParser"
+			],
+			[
+				"st",
+				"style\tTag"
+			],
+			[
+				"ob",
+				"objDisplay"
+			],
+			[
+				"text-",
+				"text-align"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"background",
+				"background-repeat"
+			],
+			[
+				"border-s",
+				"border-spacing"
+			],
+			[
+				"s",
+				"solid"
+			],
+			[
+				"bord",
+				"border-style"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"li",
+				"link\tTag"
+			],
+			[
+				"ti",
+				"title\tTag"
+			],
+			[
+				"he",
+				"head\tTag"
+			],
+			[
+				"visi",
+				"visibile"
+			],
+			[
+				"bac",
+				"background-size"
+			],
+			[
+				"fun",
+				"function"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/C/Users/yessica/Desktop/hola.html",
+			"settings":
+			{
+				"buffer_size": 264,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "Packages/Python/Python.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+	],
+	"file_history":
+	[
+		"/C/Users/yessica/Desktop/mario.html",
+		"/C/www/cusrso-mean2/vista/src/app/app.component.ts",
+		"/C/www/cusrso-mean2/app.js",
+		"/C/www/cusrso-mean2/api/controllers/song.js",
+		"/C/www/cusrso-mean2/api/middlewares/authenticated.js",
+		"/C/www/cusrso-mean2/vista/src/index.html",
+		"/C/www/cusrso-mean2/vista/src/assets/css/style.css",
+		"/C/www/cusrso-mean2/controllers/user.js",
+		"/C/www/cusrso-mean2/api/index.js",
+		"/C/www/cusrso-mean2/controllers/song.js",
+		"/C/www/cusrso-mean2/routes/song.js",
+		"/C/www/cusrso-mean2/controllers/album.js",
+		"/C/www/cusrso-mean2/routes/album.js",
+		"/C/www/cusrso-mean2/routes/artist.js",
+		"/C/www/cusrso-mean2/controllers/artist.js",
+		"/C/www/cusrso-mean2/routes/song",
+		"/C/www/cusrso-mean2/models/artist.js",
+		"/C/www/cusrso-mean2/routes/user.js",
+		"/C/www/cusrso-mean2/models/song.js",
+		"/C/www/cusrso-mean2/models/album.js",
+		"/C/www/cusrso-mean2/index.js",
+		"/C/www/cusrso-mean2/services/jwt.js",
+		"/C/www/cusrso-mean2/middlewares/authenticated.js",
+		"/C/www/cusrso-mean2/models/user.js",
+		"/C/wamp/www/cusrso-mean2/package.json",
+		"/C/wamp/www/cusrso-mean2/models/song.js",
+		"/C/wamp/www/cusrso-mean2/models/album.js",
+		"/C/wamp/www/cusrso-mean2/models/artist.js",
+		"/C/Users/arturo/Desktop/notasNode.txt",
+		"/C/Users/arturo/Desktop/notasMongoDB.txt",
+		"/C/Users/arturo/Desktop/comandosNode.txt",
+		"/C/Users/arturo/Desktop/mongoDB.txt",
+		"/C/wamp/www/cusrso-mean2/package-lock.json",
+		"/C/Users/arturo/Documents/codigoPython/hola.py",
+		"/C/Users/arturo/Desktop/configuracionJBoss/problemasJBoss",
+		"/C/Users/arturo/Desktop/visa.svg",
+		"/C/Users/arturo/Desktop/mc.svg",
+		"/C/Users/arturo/Documents/pruebas/calculadora/cssCalculadora.css",
+		"/C/Users/arturo/Documents/pruebas/calculadora/interfazEjemploCalculadora.html",
+		"/C/Users/arturo/Documents/pruebas/calculadora/calculadora.html",
+		"/C/Users/arturo/Documents/pruebas/tooltip/tooltip.html",
+		"/C/Users/arturo/Documents/pruebas/calculadora/calculadora.js",
+		"/C/Users/arturo/AppData/Roaming/Sublime Text 3/Packages/User/untitled.sublime-build"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"http",
+			"album",
+			"Album",
+			"album",
+			"albums",
+			"album",
+			"Album",
+			"album",
+			"Album",
+			"album",
+			"Album",
+			"album",
+			"Album",
+			"album",
+			"Album",
+			"album",
+			"getImageFile",
+			"uploadImage",
+			"artist",
+			"Artist",
+			"artist",
+			"Artist",
+			"artist",
+			"Artist",
+			"artist",
+			"artistController",
+			"artist",
+			"Artist",
+			"artist",
+			"Artist",
+			"artist",
+			"Artist",
+			"artist",
+			"'use strict'\n\nvar express = require('express');\nvar artistController = require('../controllers/artist');\nvar api = express.Router();\nvar md_auth = require('../middlewares/authenticated');\n\nvar multipart = require('connect-multiparty');\nvar md_upload = multipart({uploadDir: './uploads/artist'});\n\n\napi.get('/artist/:id', md_auth.ensureAuth, artistController.getArtist);\napi.post('/artist', md_auth.ensureAuth, artistController.saveArtist);\napi.get('/artists/:page?', md_auth.ensureAuth, artistController.getArtists);\napi.put('/artist/:id?', md_auth.ensureAuth, artistController.updateArtist);\napi.delete('/artist/:id', md_auth.ensureAuth, artistController.deleteArist);\napi.post('/upload-image-artist/:id', [md_auth.ensureAuth,md_upload], artistController.uploadImage);\napi.get('/get-image-artist/:imageFile', md_auth.ensureAuth, artistController.getImageFile);\n\nmodule.exports = api;\n",
+			"artist",
+			"Artist",
+			"artist",
+			"idArtist",
+			"updateArtist",
+			"getArtist",
+			"multi",
+			"path",
+			"saveUser",
+			"createtoken",
+			"multip",
+			"SongSchema",
+			"Artist",
+			"ArtistSchema",
+			"Artist",
+			"ArtistSchema",
+			"destr",
+			"=\"\">",
+			"\">",
+			"><a onclick=\"\">",
+			"a",
+			"<",
+			"8px",
+			"position"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/C/Users/yessica/Desktop/hola.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 264,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								119,
+								119
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 144.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Python/Python.sublime-build",
+	"project": "proyectoCursoMean2.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 260.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
