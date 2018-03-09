@@ -22,34 +22,31 @@
         <!--Mostrar albums-->
         <ul class="albums-list">
             <li *ngFor = "let album of albums" class=" col-lg-4 album-item">
-                
-                    <div class="album-image">
-                        <img src="{{url + '/get-image-album/' + album.image}}" alt="">
-                    </div>
-                
-                    <div class="album-name">
-                        <p>
-                            <a href="#">
-                                {{album.title}}
-                            </a>
-                        </p>
-                        <p>
-                            <a [routerLink] = "['/artist',album.artist._id]">
-                                {{album.artist.name}}
-                            </a>
-                        </p>
+                <div class="album-image">
+                    <img src="{{url + '/get-image-album/' + album.image}}" alt="">
+                </div>
+            
+                <div class="album-name">
+                    <p>
+                        <a [routerLink] = "['/album',album._id]">
+                            {{album.title}}
+                        </a>
+                    </p>
+                    <p>
+                        <a [routerLink] = "['/artista',album.artist._id]">
+                            {{album.artist.name}}
+                        </a>
+                    </p>
 
-                        <div class="buttons" *ngIf = "identity.role == 'ROLE_ADMIN'">
-                            <a [routerLink] = "['/editar-album/',album._id]" class="btn btn-sm btn-warning">Editar</a>
-                            <a (click) = "onDeleteAlbumConfirm(album._id)" class="btn btn-sm btn-danger">Eliminar</a>
-                        </div>
-                        <div class="seguro" *ngIf = "confirm == album._id">
-                            <a (click) = "deleteAlbum(artist._id)" class="btn btn-sm btn-danger">Eliminar</a>
-                            <a (click) = "cancelDelete()" class="btn btn-sm btn-primary">Cancelar</a>
-                        </div>
-
+                    <div class="buttons" *ngIf = "identity.role == 'ROLE_ADMIN'">
+                        <a [routerLink] = "['/editar-album/',album._id]" class="btn btn-sm btn-warning">Editar</a>
+                        <a (click) = "onDeleteAlbumConfirm(album._id)" class="btn btn-sm btn-danger">Eliminar</a>
                     </div>
-                
+                    <div class="seguro" *ngIf = "confirm == album._id">
+                        <a (click) = "deleteAlbum(album._id)" class="btn btn-sm btn-danger">Eliminar</a>
+                        <a (click) = "cancelDelete()" class="btn btn-sm btn-primary">Cancelar</a>
+                    </div>
+                </div>
             </li>
         </ul>
     </div>

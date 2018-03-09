@@ -1,6 +1,13 @@
 #Ignorar lo siguiente
+#api/uploads/album/lIg0SCKiINBn08doV4RILj4z.jpg
+#api/uploads/artist/lIg0SCKiINBn08doV4RILj4z.jpg
+#api/uploads/song/lIg0SCKiINBn08doV4RILj4z.jpg
 #api/uploads/users/lIg0SCKiINBn08doV4RILj4z.jpg
 
 /api/uploads/*/*
+
+#dependencias del api
 /api/node_modules/
+
+#dependencias de la vista
 /vista/node_modules/

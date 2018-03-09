@@ -4,16 +4,27 @@ import { FormsModule } from '@angular/forms'; //formularios
 import { HttpModule } from '@angular/http';
 import { routing, appRoutingProviders } from './app.routing';
 
-import { UserEditComponent } from './components/user-edit.component';
-import { AppComponent } from './app.component';
-import { ArtistListComponent } from './components/artist.list.component';
+/**Home */
 import { HomeComponent } from './components/home.component';
+
+/**Usuario */
+import { AppComponent } from './app.component';
+import { UserEditComponent } from './components/user-edit.component';
+
+/**Artista */
+import { ArtistListComponent } from './components/artist.list.component';
 import { ArtistAddComponent} from './components/artist-add.component';
 import { ArtistEditComponent } from './components/artist-edit.component';
 import { ArtistDetailComponent } from './components/artist-detail.component';
 
+/**Album */
 import { AlbumAddComponent } from './components/album-add.component';
 import { AlbumEditComponent } from './components/album-edit.component';
+import { AlbumDetailComponent } from './components/album-detail.component';
+
+/**Song */
+import { SongAddComponent } from './components/song-add.component';
+import { SongEditComponent } from './components/song-edit.component';
 
 @NgModule({
   /**Componentes, directivas o pipes */
@@ -26,7 +37,10 @@ import { AlbumEditComponent } from './components/album-edit.component';
     ArtistEditComponent,
     ArtistDetailComponent,
     AlbumAddComponent,
-    AlbumEditComponent
+    AlbumEditComponent,
+    AlbumDetailComponent,
+    SongAddComponent,
+    SongEditComponent
   ],
   /**Otros NgModules, cuyas clases exportadas son requeridas por templates de componentes de este módulo. */
   imports: [

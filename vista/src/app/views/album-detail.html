@@ -1,0 +1,38 @@
+
+
+<div class="album-box" *ngIf="album">
+    <div id="album-head-card">
+        <div class="image">
+            <img src="{{url + '/get-image-album/' + album.image}}" alt="" *ngIf="album.image">
+        </div>
+    </div>
+    <div class="data">
+        <h1>{{album.title}}</h1>
+        <p>{{album.year}}</p>
+        <p>{{album.description}}</p>
+        <a [routerLink] = "['/crear-tema',album._id]" class="btn btn-warning" *ngIf="identity.role == 'ROLE_ADMIN'">
+            A&ntilde;adir canción
+        </a>
+    </div>
+</div>
+
+
+
+<div class="clearfix"></div>
+<div *ngIf="songs">
+    <ul>
+        <li *ngFor="let song of songs">
+            {{song.name}}
+            -{{song.number}}
+            -{{song.duration}}
+            <div *ngIf = "song.file">
+                <audio controls >
+                    <source src="{{url + 'get-song-audio/' + song.file}}"  type="audio/{{song.file.substring(song.file.lastIndexOf('.') + 1 ,song.file.length)}}">
+                    tu navegador no soporta reproducción de audio
+                    
+                </audio>
+            </div>
+        </li>
+
+    </ul>
+</div>

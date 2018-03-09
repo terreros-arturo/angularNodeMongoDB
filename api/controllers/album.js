@@ -125,9 +125,11 @@ function updateAlbum(req,res){
 
 function deleteAlbum(req,res){
 	var idAlbum = req.params.id;
+	console.log('Eliminando: ' + idAlbum);
 	if(idAlbum){
 		Album.findByIdAndRemove(idAlbum, (err,albumDeleted)=>{
 			if(err){
+				console.log(err);
 				res.status(500).send({message:"Se ha producido un error inesperado, contacte con su admnistrador"});
 			}else{
 				if(!albumDeleted){

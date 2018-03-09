@@ -141,7 +141,8 @@ html, body{
 
 
 
-#artist-head-card .image{
+#artist-head-card .image,
+#album-head-card .image{
 	width: 230px;
 	height: 230px;
 	overflow: hidden;
@@ -149,7 +150,8 @@ html, body{
 	margin-right: 30px;
 }
 
-#artist-head-card .image img{
+#artist-head-card .image img,
+#album-head-card .image img{
 	height: 230px;
 }
 

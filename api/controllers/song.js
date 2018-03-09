@@ -106,7 +106,7 @@ function updateSong(request, response){
 	var idSong = request.params.id;
 	var songForUpdate = request.body;
 
-	Song.findByIdAndUpdate(idSong,songForUpdate, (err,songUpdate)=>{
+	Song.findByIdAndUpdate(idSong,songForUpdate, {new: true}, (err,songUpdate)=>{
 		if(err){
 			console.log('error 500 al actualizar registro de canción');
 			response.status(500).send({message:"Se ha producido un error, contacte con su administrador"});
@@ -149,8 +149,8 @@ function uploadAudio(request,response){
 	//Se valida que haya archivos
 	if(request.files){
 		//image es el name del campo file
-		if(request.files.image.path){
-			var file_path = request.files.image.path;
+		if(request.files.file.path){
+			var file_path = request.files.file.path;
 			console.log('file_path: \'' + file_path + '\'');
 			var fileSplit = file_path.split('\\');
 
@@ -166,7 +166,7 @@ function uploadAudio(request,response){
 
 			//validar extensión
 			if(file_ext== 'mp3' || file_ext== 'ogg'){
-				Song.findByIdAndUpdate({_id:idSong},{file:fileName},(err,songUpdated)=>{
+				Song.findByIdAndUpdate({_id:idSong},{file:fileName},{new: true},(err,songUpdated)=>{
 					if(err){
 						response.status(500).send({message:'Error al cargar archivo de audio de canción, consulte con su admnistrador'});
 					}else{

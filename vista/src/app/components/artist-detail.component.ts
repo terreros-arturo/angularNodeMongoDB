@@ -11,12 +11,12 @@ import { Album } from '../models/album';
 @Component({
     selector: 'artist-detail',
     templateUrl: '../views/artist-detail.html',
-    providers: [UserService, ArtistService, AlbumService],
+    providers: [UserService, ArtistService, AlbumService]
 })
 
 
 
-export class ArtistDetailComponent{
+export class ArtistDetailComponent implements OnInit{
     public titulo: string;
     public artist: Artist;
     public identity;
@@ -24,7 +24,7 @@ export class ArtistDetailComponent{
     public url: string;
     public artistMessage: string;
     public albums: Array<Album>;
-
+    public confirm: string;
 
     constructor(
         private route: ActivatedRoute,
@@ -37,6 +37,7 @@ export class ArtistDetailComponent{
         this.identity = this.userService.getIdentity();
         this.token = this.userService.getToken();
         this.url = GLOBAL.url;
+        this.confirm = '';
         //this.artist = new Artist('','','','');
     }
 
@@ -61,7 +62,7 @@ export class ArtistDetailComponent{
                             //Albums recuperados
                             if(success.albums){
                                 this.albums = success.albums;
-                                console.log(this.albums);
+                                //console.log(this.albums);
                             }else{
                                 //No se puedieron recuperar albums
                                 console.log('No se encontraron albums para este artista');
@@ -81,8 +82,35 @@ export class ArtistDetailComponent{
             error => {
                 this.artistMessage = "error";
             });
-        });
-        
+        });       
+    }
+
+    public onDeleteAlbumConfirm(id: string){
+        if(id){
+            this.confirm = id;
+        }
+    }
+
+    public deleteAlbum(id: string){
+        //se invoca al servicio para eliminar
+        this.albumService.deleteAlbum(this.token,id).subscribe(
+            success => {
+                if(success.album){
+                    //this.router.navigate(['/artistas/',1]);
+                    //window.location.reload();
+                    this.getArtist();
+                }else{
+                    console.error('Se ha producido un error al eliminar el ');
+                }
+            },
+            error => {
+                console.error(error);
+            }
+        );
+    }
+
+    public cancelDelete(){
+        this.confirm = '';
     }
     
 }

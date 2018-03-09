@@ -1,0 +1,49 @@
+<div class="col-lg-6" *ngIf="identity && identity.role == 'ROLE_ADMIN'">
+    <h1>{{titulo}}</h1>
+
+    <div *ngIf = "msgSong">
+        <div class="alert alert-info">
+            {{msgSong}}
+        </div>
+    </div>
+
+    <form #formSong = "ngForm" (ngSubmit) = "onSubmit()">
+        <p>
+            <label for="">N&uacute;mero</label>
+            <input class="form-control" type="text" name="number" id="number" placeholder="Ingresa el n&uacute;mero de canci&oacute;n" #number = "ngModel" [(ngModel)] = "song.number" required>
+            <span *ngIf="number.invalid && number.touched">
+                * Campo requerido
+            </span>
+        </p>
+        <p>
+            <label for="">T&iacute;tulo</label>
+            <input class="form-control" type="text" name="name" id="name" placeholder="Ingresa el nombre de la canci&oacute;n" #name = "ngModel" [(ngModel)] = "song.name" required>
+            <span *ngIf="name.invalid && name.touched">
+                * Campo requerido
+            </span>
+        </p>
+        <p>
+            <label for="">Duraci&oacute;n</label>
+            <input class=" form-control" type="time" name="duration" id="duration" placeholder="Ingresa la duraci&oacute;n de la canci&oacute;n" #duration = "ngModel" [(ngModel)] = "song.duration" required>
+            <span *ngIf="duration.invalid && duration.touched">
+                * Campo requerido
+            </span>
+        </p>
+
+        <p *ngIf = "song && song.file">
+            <audio controls >
+                <source src="{{url + 'get-song-audio/' + song.file}}"  type="audio/{{song.file.substring(song.file.lastIndexOf('.') + 1 ,song.file.length)}}" type = "audio/mpeg">
+                tu navegador no soporta reproducción de audio
+                
+            </audio>
+        </p>
+
+        <p *ngIf="song && song._id">
+            <input type="file" name="file" id="file" placeholder="Selecciona un archivo de audio" (change) = "chooseFileEvent($event)">
+        </p>
+
+
+        <input class ="btn btn-success" type="submit" value="{{btnSubmit}}"  [disabled] = "formSong.form.invalid">
+
+    </form>
+</div>

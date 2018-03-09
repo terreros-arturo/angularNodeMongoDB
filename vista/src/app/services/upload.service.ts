@@ -20,7 +20,7 @@ export class UploadFileService{
         return new Promise((resolve, reject) =>{
             let formData: any = new FormData();
             for(let index = 0; index < files.length; index ++){
-                formData.append('image', files[index], files[index].name);
+                formData.append(name, files[index], files[index].name);
             }
 
             let xhr = new XMLHttpRequest();
