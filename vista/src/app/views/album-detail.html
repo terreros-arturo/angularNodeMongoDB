@@ -5,34 +5,41 @@
         <div class="image">
             <img src="{{url + '/get-image-album/' + album.image}}" alt="" *ngIf="album.image">
         </div>
+        <div class="data">
+            <h1>{{album.title}}</h1>
+            <p><strong>{{album.artist.name}}</strong></p>
+            <p>{{album.year}}</p>
+            <p>{{album.description}}</p>
+            <a [routerLink] = "['/crear-tema',album._id]" class="btn btn-warning" *ngIf="identity.role == 'ROLE_ADMIN'">
+                A&ntilde;adir canción
+            </a>
+        </div>
     </div>
-    <div class="data">
-        <h1>{{album.title}}</h1>
-        <p>{{album.year}}</p>
-        <p>{{album.description}}</p>
-        <a [routerLink] = "['/crear-tema',album._id]" class="btn btn-warning" *ngIf="identity.role == 'ROLE_ADMIN'">
-            A&ntilde;adir canción
-        </a>
-    </div>
-</div>
+    <div class="clearfix"></div>
+    <div class="gallery-songs" *ngIf="songs">
+        <ul class="song-list">
+            <li *ngFor="let song of songs" class="song-item">
+                <div class="title">
 
-
-
-<div class="clearfix"></div>
-<div *ngIf="songs">
-    <ul>
-        <li *ngFor="let song of songs">
-            {{song.name}}
-            -{{song.number}}
-            -{{song.duration}}
-            <div *ngIf = "song.file">
-                <audio controls >
-                    <source src="{{url + 'get-song-audio/' + song.file}}"  type="audio/{{song.file.substring(song.file.lastIndexOf('.') + 1 ,song.file.length)}}">
-                    tu navegador no soporta reproducción de audio
+                    <a class="btn btn-success" (click) = "startPlayer(song)">
+                        <span class="glyphicon glyphicon-play" aria-hidden="true"> </span>
+                    </a>
                     
-                </audio>
-            </div>
-        </li>
+                    {{song.number + '. ' + song.name + ' - ' + song.duration}}
+                    <div class="buttons" *ngIf = "identity && identity.role == 'ROLE_ADMIN'">
+                        <a class="btn btn-warning" [routerLink] = "['/editar-tema',song._id]">Editar</a>
+                        <a class="btn btn-danger" (click) = "confirmDelete(song._id)">Eliminar</a>
+                    </div>
+                    <div class="seguro seguro-song" *ngIf = "confirm == song._id">
+                        <a class="btn btn-danger" (click) = "deleteSong(song._id)">Eliminar</a>
+                        <a class="btn btn-primary" (click) = "cancelSong()">Cancelar</a>
+                    </div>
+                    <div class="clearfix">
 
-    </ul>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
 </div>

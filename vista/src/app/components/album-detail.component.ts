@@ -12,6 +12,8 @@ import { Album } from '../models/album';
 import { Song } from '../models/song';
 
 
+import { PlayerComponent } from  './player.component';
+
 
 
 @Component({
@@ -32,6 +34,9 @@ export class AlbumDetailComponent implements OnInit{
     public albumMessage: string;
     public url: string;
 
+    public confirm: string;
+    
+
     public constructor(
         private songService: SongService,
         private userService: UserService,
@@ -45,6 +50,7 @@ export class AlbumDetailComponent implements OnInit{
         this.albumMessage = '';
         this.album = new Album('','','',0,'','');
         this.url = GLOBAL.url;
+        this.confirm = '';
     }
 
     public ngOnInit(){
@@ -66,12 +72,13 @@ export class AlbumDetailComponent implements OnInit{
         this.albumService.getAlbum(idAlbum, this.token).subscribe(
             success  => {
                 if(success.album){
-                    this.album._id = success.album._id;
+                    /*this.album._id = success.album._id;
                     this.album.artist= success.album.artist._id;
                     this.album.description = success.album.description;
                     this.album.image = success.album.image;
                     this.album.title = success.album.title;
-                    this.album.year = success.album.year;
+                    this.album.year = success.album.year;*/
+                    this.album = success.album;
 
                     console.log('Album');
                     console.log(this.album);
@@ -105,4 +112,61 @@ export class AlbumDetailComponent implements OnInit{
         );
         
     }
+
+    public confirmDelete(idSong: string){
+        this.confirm = idSong;
+    }
+
+    public cancelSong(){
+        this.confirm = '';
+    }
+    
+    
+    public deleteSong(idSong: string){
+        if(idSong && idSong != ''){
+            this.songService.deleteSong(this.token,idSong).subscribe(
+                success => {
+                    if(success.song){
+                        console.log('Cancion eliminada correctamente');
+                        this.getAlbum(this.album._id);
+                    }else{
+                        this.albumMessage = "No se logró eliminar la canci&oacute;n";
+                    }
+                },error => {
+                    this.albumMessage = error;
+                }
+            );
+        }
+    }
+
+
+    public startPlayer(song: Song){
+        console.log('reproduciendo canción...' + song.name);
+
+        let jsonSong = JSON.stringify(song);
+        if(song.file){
+            let filePath = this.url + 'get-song-audio/' + song.file;
+            let imagePath = this.url + 'get-image-album/' + this.album.image;
+            localStorage.setItem('sound_song', jsonSong);
+
+            let audioElement = document.getElementById('mp3-source');
+            audioElement.setAttribute('src', filePath);
+
+            (document.getElementById('player') as any).load();
+            (document.getElementById('player') as any).play();
+            
+
+            document.getElementById('play-song-title').textContent = song.name;
+            //document.getElementById('play-song-artist').textContent = this.album.artist.name;
+            document.getElementById('play-song-artist').textContent = song.album.artist.name;
+
+            document.getElementById('play-image-album').setAttribute('src',this.url + 'get-image-album/' + song.album.image);
+
+            //Pausar y guardar estado de canción actual (si tiene canción reproduciendo actualmente)
+            //Editar src de audio
+            //Reproducir en automático
+        }
+    }
+
+    
 }

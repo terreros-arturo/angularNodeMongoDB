@@ -25,6 +25,7 @@ import { AlbumDetailComponent } from './components/album-detail.component';
 /**Song */
 import { SongAddComponent } from './components/song-add.component';
 import { SongEditComponent } from './components/song-edit.component';
+import { PlayerComponent } from './components/player.component';
 
 @NgModule({
   /**Componentes, directivas o pipes */
@@ -40,7 +41,8 @@ import { SongEditComponent } from './components/song-edit.component';
     AlbumEditComponent,
     AlbumDetailComponent,
     SongAddComponent,
-    SongEditComponent
+    SongEditComponent,
+    PlayerComponent
   ],
   /**Otros NgModules, cuyas clases exportadas son requeridas por templates de componentes de este módulo. */
   imports: [
